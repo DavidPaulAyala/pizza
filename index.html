@@ -7,9 +7,31 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
-    <title></title>
+    <title>Pizza</title>
   </head>
   <body>
-
+    <div class="container">
+      <div class="well">
+        <h1>Don and Moe's Pizza</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <form id="new-pizza">
+            <div class="form-group">
+              <label for="new-size">Size</label>
+              <input type="text" class="form-control" id="new-size">
+            </div>
+            <div class="form-group">
+              <label for="new-toppings">Toppings</label>
+              <input type="text" class="form-control" id="new-toppings">
+            </div>
+            <button type="submit" class="btn btn-danger">Submit</button>
+          </form>
+          <h3>Your Order</h3>
+          <ul id="pizzas">
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
