@@ -17,11 +17,13 @@ $(document).ready(function() {
     event.preventDefault();
 
     var inputtedSize = $("input#new-size").val();
-    var inputtedToppings = $("input#toppings").val();
+    var inputtedToppings = $("input#new-toppings").val();
 
     var newPizza = new Pizza(inputtedSize, inputtedToppings);
 
-    $("ul#pizzas").append("<li><span class='pizza'>" + newPizza.sizePie + "</span></li>");
+    $("#show-selection").show();
+    $(".size").text(newPizza.sizePie);
+    $(".toppings").append(newPizza.toppings);
 
     $("input#new-pizza").val("");
     $("input#toppings").val("");
