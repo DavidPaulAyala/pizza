@@ -20,8 +20,6 @@ Pizza.prototype.costPizza = function(){
   return piePrice
 }
 
-
-
 $(document).ready(function() {
   $("form#new-pizza").submit(function(event) {
     event.preventDefault();
@@ -38,6 +36,5 @@ $(document).ready(function() {
     $(".size").text(newPizza.sizePie);
     $(".toppings").text(userSelectedToppings);
     $(".price").text("$" + newPizza.costPizza(piePrice) + ".00");
-
   });
 });

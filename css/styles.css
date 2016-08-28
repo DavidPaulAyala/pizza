@@ -1,5 +1,16 @@
 #show-selection {
   display: none;
+  padding-top: 12px;
+}
+
+#show-selection h3 {
+  text-decoration: underline;
+}
+
+#order-well {
+  background-color: rgb(226, 230, 231);
+  border: 10px solid rgb(215, 17, 42);
+  outline: 5px solid rgb(12, 100, 144);
 }
 
 body {
