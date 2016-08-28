@@ -1,26 +1,24 @@
 //business logic
-function Pizza(sizePie, toppings) {
+function Pizza(sizePie, toppings){
   this.sizePie = sizePie;
-  this.toppings = [];
+  this.toppings = toppings;
 }
 
-
-
-Pizza.prototype.costPizza = function() {
-  var piePrice = 0;
-  if (this.sizePie === "Small") {
+Pizza.prototype.costPizza = function(){
+  // var piePrice = 0;
+  if (this.sizePie === "Small"){
     piePrice = 9;
-  }if (this.sizePie === "Medium") {
+  }
+  if (this.sizePie === "Medium"){
     piePrice = 13;
-  }if (this.sizePie === "Large"){
+  }
+  if (this.sizePie === "Large"){
     piePrice = 16;
   }
+  if (this.toppings.length > 0){
+  piePrice += (this.toppings.length * 1);
+  }
   return piePrice
-};
-
-Pizza.prototype.costTopping = function(){
-  return parseInt(this.toppings.length) * 1;
-  console.log(pieToppings)
 }
 
 
@@ -28,21 +26,23 @@ Pizza.prototype.costTopping = function(){
 $(document).ready(function() {
   $("form#new-pizza").submit(function(event) {
     event.preventDefault();
-
+    var piePrice = 1;
     var inputtedSize = $("#new-size").val();
 
-    var userSelectedToppings = [];
-    $("input:checkbox[name=pieToppings]:checked").each(function(){
-      var inputtedToppings = $(this).val();
-      userSelectedToppings.push(inputtedToppings);
-    });
+    var userSelectedToppings = $("input:checkbox[name=pieToppings]:checked").map(function(){
+      return $(this).val();
+    }).get();
+    console.log(userSelectedToppings);
 
-    var newPizza = new Pizza(inputtedSize, toppings);
+    var newPizza = new Pizza(inputtedSize, userSelectedToppings);
+
+    newPizza.costPizza(piePrice);
 
     $("#show-selection").show();
     $(".size").text(newPizza.sizePie);
     $(".toppings").text(userSelectedToppings);
-    $(".price").text("$" + newPizza.costPizza() + ".00");
+    $(".price").text(newPizza.costPizza(piePrice));
+    console.log(newPizza.costPizza(piePrice));
 
   });
 });
