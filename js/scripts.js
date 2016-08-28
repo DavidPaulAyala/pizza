@@ -5,7 +5,6 @@ function Pizza(sizePie, toppings){
 }
 
 Pizza.prototype.costPizza = function(){
-  // var piePrice = 0;
   if (this.sizePie === "Small"){
     piePrice = 9;
   }
@@ -26,7 +25,7 @@ Pizza.prototype.costPizza = function(){
 $(document).ready(function() {
   $("form#new-pizza").submit(function(event) {
     event.preventDefault();
-    var piePrice = 1;
+    var piePrice = 0;
     var inputtedSize = $("#new-size").val();
     var userSelectedToppings = $("input:checkbox[name=pieToppings]:checked").map(function(){
       return $(this).val();
