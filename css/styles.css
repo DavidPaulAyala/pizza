@@ -1,3 +1,21 @@
 #show-selection {
   display: none;
 }
+
+body {
+  background-color: rgb(226, 230, 231);
+}
+
+#topper {
+  font-family: 'Lobster', cursive;
+  font-size: 100px;
+  text-decoration: underline;
+  text-align: center;
+  color: rgb(215, 17, 42);
+  background-color: rgb(12, 100, 144);
+  border: 10px solid rgb(215, 17, 42);
+}
+
+#drivers {
+  padding-top: 20px;
+}

@@ -28,12 +28,9 @@ $(document).ready(function() {
     event.preventDefault();
     var piePrice = 1;
     var inputtedSize = $("#new-size").val();
-
     var userSelectedToppings = $("input:checkbox[name=pieToppings]:checked").map(function(){
       return $(this).val();
     }).get();
-    console.log(userSelectedToppings);
-
     var newPizza = new Pizza(inputtedSize, userSelectedToppings);
 
     newPizza.costPizza(piePrice);
@@ -41,8 +38,7 @@ $(document).ready(function() {
     $("#show-selection").show();
     $(".size").text(newPizza.sizePie);
     $(".toppings").text(userSelectedToppings);
-    $(".price").text(newPizza.costPizza(piePrice));
-    console.log(newPizza.costPizza(piePrice));
+    $(".price").text("$" + newPizza.costPizza(piePrice) + ".00");
 
   });
 });
